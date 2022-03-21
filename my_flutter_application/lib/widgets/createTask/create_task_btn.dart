@@ -14,12 +14,12 @@ class CreateTaskButton extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(
-          top: 30.0,
-          left: 20.0,
-          right: 20.0
+          top: 50.0,
+          left: 30.0,
+          right: 30.0
         ),
         height: 70.0, //dimensión del botón - alto
-        width: 200.0, //dimensón del botón - largo
+        width: 150.0, //dimensón del botón - largo
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           gradient: LinearGradient(
