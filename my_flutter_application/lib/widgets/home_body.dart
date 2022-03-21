@@ -22,7 +22,8 @@ Widget Title = Container(
           children: [
             Text('Today',
               style: TextStyle(
-              color: Colors.black),
+              color: Colors.black,
+              fontSize: 20),
             ),
             Text('Schedule',
               style: TextStyle(
@@ -215,11 +216,10 @@ Widget designLokaDashboard = Container(
 
 
 
-Widget appBody = Container(
-  child: Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
+Widget appBody = ListView(
+    //mainAxisAlignment: MainAxisAlignment.start,
+    //crossAxisAlignment: CrossAxisAlignment.stretch,
+    children: <Widget> [
       Title,
       wakeUp,
       dailyWorkout,
@@ -228,6 +228,5 @@ Widget appBody = Container(
       designLandingPage,
       designLokaDashboard,
     ]
-    ),
 );
 

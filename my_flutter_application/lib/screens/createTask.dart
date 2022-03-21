@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter_application/widgets/create_task_body.dart';
+import 'package:my_flutter_application/widgets/createTask/create_task_body.dart';
 
 class CreateTaskScreen extends StatelessWidget {
   const CreateTaskScreen({ 
@@ -9,7 +9,7 @@ class CreateTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MyCreateTaskBody(),
+      body: CreateTaskBody(),
     );
   }
 }

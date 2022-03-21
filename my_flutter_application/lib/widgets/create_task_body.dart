@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'create_task_btn.dart';
 
 class MyCreateTaskBody extends StatelessWidget {
   const MyCreateTaskBody({ Key? key }) : super(key: key);
@@ -161,15 +160,6 @@ Widget alarmField = Container(
   ),
 );
 
-Widget createTaskButton = ElevatedButton(
-    onPressed: (){},
-    child: Center(
-      child:Text(
-        'Create Task'
-      ),
-    )
-  );
-
 Widget createTaskBody = Center(
   child: Column(
     mainAxisAlignment: MainAxisAlignment.start,
@@ -184,7 +174,7 @@ Widget createTaskBody = Center(
       timeField,
       alarmTitlle,
       alarmField,
-      createTaskButton,
+      CreateTaskButton(),
     ]
     ),
 );
