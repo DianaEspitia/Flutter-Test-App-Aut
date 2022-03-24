@@ -36,16 +36,13 @@ class _AddButtonState extends State<AddButton> {
           size: 30.0,
         ),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.0),
+            shape: BoxShape.circle,
             gradient: LinearGradient(
                 colors: [
                   Color(0xFF7E16D8),
                   Color(0xFFD816D1)
                 ],
-                begin: FractionalOffset(0.2, 0.0),
-                end: FractionalOffset(1.0, 0.6),
-                stops: [0.0, 0.6],
-                tileMode: TileMode.clamp
+                tileMode: TileMode.clamp //buscar
             )
         ),
       ),

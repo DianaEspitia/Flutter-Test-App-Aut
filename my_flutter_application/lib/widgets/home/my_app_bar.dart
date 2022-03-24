@@ -56,6 +56,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     return AppBar(
       backgroundColor: Colors.white,
+      centerTitle: false,
+      leadingWidth: 0,
+      bottom: null,
+      elevation: 0,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

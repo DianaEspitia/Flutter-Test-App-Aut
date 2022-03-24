@@ -11,12 +11,11 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
 
-    final back = Container(
-      margin: EdgeInsets.only(
-        top: 0.0,
-        left: 2.0
-      ),
-      child: Icon(
+    final back = IconButton(
+      onPressed: (){
+        Navigator.pop(context);
+      },
+      icon: Icon(
         Icons.arrow_back_ios,
         color: Colors.black,
         size: 15.0,
@@ -55,11 +54,11 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
 
 
     return AppBar(
+      leading: back,
         backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            back,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -33,6 +33,14 @@ class TaskTitle extends StatelessWidget {
                 borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
                 borderRadius: BorderRadius.all(Radius.circular(5.0))
             ),
+            border: OutlineInputBorder(
+                borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
+                borderRadius: BorderRadius.all(Radius.circular(5.0))
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
+                borderRadius: BorderRadius.all(Radius.circular(5.0))
+            ),
             fillColor: Color(0xFFF3F2F4), filled: true,
             hintText: 'Type Here',
             //helperText: 'Keep it short, this is just a demo.',
