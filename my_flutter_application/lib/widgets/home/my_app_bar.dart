@@ -10,8 +10,36 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: Colors.white,
+      centerTitle: false,
+      leadingWidth: 0,
+      bottom: null,
+      elevation: 0,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              titleText1(),
+              titletext2()
+            ],
+          ),
+          photo()
+        ],
+      )
+    );
+  }
+}
 
-    final text1 = Container(
+
+class titleText1 extends StatelessWidget {
+  const titleText1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 2.0,
           left: 5.0
@@ -22,9 +50,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             color: Colors.purple),
       ),
     );
+  }
+}
 
 
-    final text2 = Container(
+class titletext2 extends StatelessWidget {
+  const titletext2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 1.0,
           left: 5.0
@@ -35,9 +70,16 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             fontSize: 12),
       ),
     );
+  }
+}
 
 
-    final photo = Container(
+class photo extends StatelessWidget {
+  const photo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 2.0,
           right: 20.0
@@ -52,27 +94,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
           )
       ),
     );
-
-
-    return AppBar(
-      backgroundColor: Colors.white,
-      centerTitle: false,
-      leadingWidth: 0,
-      bottom: null,
-      elevation: 0,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              text1,
-              text2
-            ],
-          ),
-          photo
-        ],
-      )
-    );
   }
 }
+
+
+

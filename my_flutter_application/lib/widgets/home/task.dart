@@ -1,35 +1,14 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Task extends StatelessWidget {
 
-  String task = "";
-  String time = "";
+  final String task;
+  final String time;
 
   Task(this.task, this.time);
 
   @override
   Widget build(BuildContext context) {
-  
-    
-    final taskName = Text(
-      task,
-      style: TextStyle(
-          fontSize: 15.0,
-          color: Colors.black,
-        fontWeight: FontWeight.bold
-      ),
-    );
-
-    final taskTime = Text(
-      time,
-      style: TextStyle(
-          fontSize: 15.0,
-          color: Colors.black,
-      ),
-    );
 
     final arrow = Icon(
       Icons.arrow_forward_ios
@@ -49,7 +28,7 @@ class Task extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomText(text: task, fontWeight: FontWeight.bold),
+                CustomText(text: task),
                 CustomText(text: time)
               ],
             ),

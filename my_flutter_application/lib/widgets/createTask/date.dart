@@ -4,8 +4,28 @@ class Date extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget> [
+            title(),
+            input()
+          ],
+        )
 
-    final title = Container(
+    );
+
+
+  }
+}
+
+
+class title extends StatelessWidget {
+  const title({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 40.0,
           left: 20.0
@@ -18,8 +38,16 @@ class Date extends StatelessWidget {
           fontSize: 18.0,),
       ),
     );
+  }
+}
 
-    final input = Container(
+
+class input extends StatelessWidget {
+  const input({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 20.0,
           left: 20.0,
@@ -30,6 +58,14 @@ class Date extends StatelessWidget {
         keyboardType: TextInputType.text,
         decoration: InputDecoration(
           focusedBorder:  OutlineInputBorder(
+              borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
+              borderRadius: BorderRadius.all(Radius.circular(5.0))
+          ),
+          border: OutlineInputBorder(
+              borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
+              borderRadius: BorderRadius.all(Radius.circular(5.0))
+          ),
+          enabledBorder: OutlineInputBorder(
               borderSide:  BorderSide(color: Color(0xFFF3F2F4)),
               borderRadius: BorderRadius.all(Radius.circular(5.0))
           ),
@@ -46,19 +82,7 @@ class Date extends StatelessWidget {
 
       ),
     );
-
-
-    return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget> [
-            title,
-            input
-          ],
-        )
-
-    );
-
-
   }
 }
+
+

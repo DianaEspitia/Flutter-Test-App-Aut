@@ -4,26 +4,54 @@ class HomeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Row(
+      children: <Widget> [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            title1(),
+            title2()
+          ],
+        ),
+        subtitle()
+      ],
+    );
+  }
+}
 
-    final title1 = Container(
+
+class title1 extends StatelessWidget {
+  const title1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
-        top: 20.0,
+          top: 20.0,
           left: 20.0
       ),
       child: Text(
         "Today",
         style: TextStyle(
             fontSize: 22.0,
-          color: Colors.black,
-          fontWeight: FontWeight.bold
+            color: Colors.black,
+            fontWeight: FontWeight.bold
         ),
       ),
     );
+  }
+}
 
-    final title2 = Container(
+
+class title2 extends StatelessWidget {
+  const title2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 5.0,
-        left: 20.0
+          left: 20.0
       ),
       child: Text(
         "Schedule",
@@ -34,11 +62,19 @@ class HomeTitle extends StatelessWidget {
         ),
       ),
     );
+  }
+}
 
-    final subtitle = Container(
+
+class subtitle extends StatelessWidget {
+  const subtitle({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: EdgeInsets.only(
           top: 55.0,
-        left: 130.0
+          left: 130.0
       ),
       child: Text(
         "2/10 Task today",
@@ -49,19 +85,8 @@ class HomeTitle extends StatelessWidget {
         ),
       ),
     );
-
-
-    return Row(
-      children: <Widget> [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            title1,
-            title2
-          ],
-        ),
-        subtitle
-      ],
-    );
   }
 }
+
+
+

@@ -13,7 +13,7 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     final back = IconButton(
       onPressed: (){
-        Navigator.pop(context);
+        Navigator.pop(context); //Retorna a la página anterior
       },
       icon: Icon(
         Icons.arrow_back_ios,
@@ -21,37 +21,6 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
         size: 15.0,
       ),
     );
-
-
-    final text1 = Container(
-      margin: EdgeInsets.only(
-          top: 1.0,
-          right: 5.0
-      ),
-      child: Text('Create',
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          fontSize: 20.0
-        ),
-      ),
-    );
-
-
-    final text2 = Container(
-      margin: EdgeInsets.only(
-          top: 1.0,
-          left: 5.0
-      ),
-      child: Text('Task',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontSize: 20.0),
-      ),
-    );
-
-
 
     return AppBar(
       leading: back,
@@ -62,8 +31,8 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                text1,
-                text2
+                text1(),
+                text2()
               ],
             )
           ],
@@ -71,3 +40,44 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
+
+
+class text1 extends StatelessWidget {
+  const text1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('Create',
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 20.0
+        ),
+      ),
+    );
+  }
+}
+
+
+class text2 extends StatelessWidget {
+  const text2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+          top: 1.0,
+          left: 5.0
+      ),
+      child: Text('Task',
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+            fontSize: 20.0),
+      ),
+    );
+  }
+}
+
+
