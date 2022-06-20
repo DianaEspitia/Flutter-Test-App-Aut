@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_application/screens/createTask.dart';
 
 class AddButton extends StatefulWidget {
-
   @override
-  State<AddButton> createState(){
+  State<AddButton> createState() {
     return _AddButtonState();
   }
 }
 
 class _AddButtonState extends State<AddButton> {
-
   void onPressedAdd() {
     Navigator.push(
       context,
@@ -32,19 +30,15 @@ class _AddButtonState extends State<AddButton> {
     return FloatingActionButton(
       child: Container(
         child: Icon(
-            Icons.add,
+          Icons.add,
           size: 30.0,
         ),
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             gradient: LinearGradient(
-                colors: [
-                  Color(0xFF7E16D8),
-                  Color(0xFFD816D1)
-                ],
+                colors: [Color(0xFF7E16D8), Color(0xFFD816D1)],
                 tileMode: TileMode.clamp //buscar
-            )
-        ),
+                )),
       ),
       onPressed: onPressedAdd,
     );

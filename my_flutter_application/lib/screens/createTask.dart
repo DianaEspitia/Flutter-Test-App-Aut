@@ -3,9 +3,9 @@ import 'package:my_flutter_application/widgets/createTask/create_task_body.dart'
 import 'package:my_flutter_application/widgets/createTask/create_task_app_bar.dart';
 
 class CreateTaskScreen extends StatelessWidget {
-  const CreateTaskScreen({ 
+  const CreateTaskScreen({
     Key? key,
-   }) : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

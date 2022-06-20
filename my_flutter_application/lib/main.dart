@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_application/screens/home.dart';
 import 'package:my_flutter_application/screens/createTask.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -14,15 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      theme: ThemeData(
-        primarySwatch: Colors.purple
-      ),
+      theme: ThemeData(primarySwatch: Colors.purple),
       home: HomeScreen(),
     );
   }
 }
-
-
-
-
-

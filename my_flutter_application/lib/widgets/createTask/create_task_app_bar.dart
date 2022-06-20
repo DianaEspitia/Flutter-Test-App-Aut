@@ -10,9 +10,8 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final back = IconButton(
-      onPressed: (){
+      onPressed: () {
         Navigator.pop(context); //Retorna a la página anterior
       },
       icon: Icon(
@@ -23,24 +22,19 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
 
     return AppBar(
-      leading: back,
+        leading: back,
         backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                text1(),
-                text2()
-              ],
+              children: [text1(), text2()],
             )
           ],
-        )
-    );
+        ));
   }
 }
-
 
 class text1 extends StatelessWidget {
   const text1({Key? key}) : super(key: key);
@@ -48,17 +42,14 @@ class text1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Create',
+      child: Text(
+        'Create',
         style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontSize: 20.0
-        ),
+            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20.0),
       ),
     );
   }
 }
-
 
 class text2 extends StatelessWidget {
   const text2({Key? key}) : super(key: key);
@@ -66,18 +57,12 @@ class text2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          top: 1.0,
-          left: 5.0
-      ),
-      child: Text('Task',
+      margin: EdgeInsets.only(top: 1.0, left: 5.0),
+      child: Text(
+        'Task',
         style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-            fontSize: 20.0),
+            fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20.0),
       ),
     );
   }
 }
-
-

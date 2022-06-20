@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Task extends StatelessWidget {
-
   final String task;
   final String time;
 
@@ -9,28 +8,18 @@ class Task extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    final arrow = Icon(
-      Icons.arrow_forward_ios
-    );
-
+    final arrow = Icon(Icons.arrow_forward_ios);
 
     return InkWell(
       onTap: _onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: 30.0,
-          horizontal: 40.0
-        ),
+        padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 40.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget> [
+          children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomText(text: task),
-                CustomText(text: time)
-              ],
+              children: [CustomText(text: task), CustomText(text: time)],
             ),
             arrow
           ],
@@ -39,12 +28,15 @@ class Task extends StatelessWidget {
     );
   }
 
-  void _onTap(){print("hola");}
-
+  void _onTap() {
+    print("hola");
+  }
 }
 
 class CustomText extends StatelessWidget {
-  const CustomText({Key? key, required this.text, this.fontWeight = FontWeight.normal}) : super(key: key);
+  const CustomText(
+      {Key? key, required this.text, this.fontWeight = FontWeight.normal})
+      : super(key: key);
 
   final String text;
   final FontWeight fontWeight;
@@ -54,11 +46,10 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-          fontSize: 15.0,
-          color: Colors.black,
-          fontWeight: fontWeight,
+        fontSize: 15.0,
+        color: Colors.black,
+        fontWeight: fontWeight,
       ),
     );
   }
 }
-
