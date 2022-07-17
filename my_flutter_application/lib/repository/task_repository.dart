@@ -12,4 +12,5 @@ class TaskRepository {
   Future<dynamic> getTitleTask() async {
     return await DatabaseHelper().getTitleTask();
   }
+
 }

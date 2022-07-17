@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_application/widgets/createTask/create_task_body.dart';
 import 'package:my_flutter_application/widgets/createTask/create_task_app_bar.dart';
+import 'package:my_flutter_application/widgets/createTask/create_task_body_corner.dart';
 
 class CreateTaskScreen extends StatelessWidget {
   const CreateTaskScreen({
@@ -11,7 +12,7 @@ class CreateTaskScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CTAppBar(),
-      body: CreateTaskBody(),
+      body: CornerCard(),
     );
   }
 }

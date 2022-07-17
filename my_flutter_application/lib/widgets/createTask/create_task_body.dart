@@ -17,11 +17,14 @@ class CreateTaskBody extends StatefulWidget {
 class _CreateTaskBodyState extends State<CreateTaskBody> {
   late final TextEditingController titleController;
   late final DateTime _taskDate;
-  late final DateTime _taskTime;
+  late final TextEditingController dateController = TextEditingController();
+  late final TextEditingController timeController;
+  late final TextEditingController alarmController = TextEditingController();
 
   @override
   void initState() {
     titleController = TextEditingController();
+    timeController = TextEditingController();
     super.initState();
   }
 
@@ -32,8 +35,10 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
         TaskTitle(
           controller: titleController,
         ),
-        Date(),
-        Time(),
+        Date(
+          controller: dateController,
+        ),
+        Time(controller: timeController),
         Alarm(),
         CreateTaskButton(
           onTap: _onSaveData,
@@ -42,18 +47,18 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
     );
   }
 
+  //Funciones de time y date aquí
+
   void _onSaveData() {
-    ModelTask _newTask = ModelTask(
+    /*ModelTask _newTask = ModelTask(
       title: titleController.text,
-      date: DateTime.now().millisecondsSinceEpoch,
+      date: dateController,
       alarm: 10,
-      time: DateTime.now().microsecondsSinceEpoch,
+      time: timeController.text,
     );
-    print(titleController.text);
     DatabaseHelper().insertTask(_newTask);
-    //Navigator.of(context).pop(true);
-    //Navigator.pop(context,true);
     Navigator.push( context, MaterialPageRoute( builder: (context) => HomeScreen()), ).then((value) => setState(() {}));
+  }*/
   }
 }
 

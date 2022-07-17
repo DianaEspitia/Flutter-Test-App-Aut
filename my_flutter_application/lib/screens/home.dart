@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_flutter_application/widgets/home/my_app_bar.dart';
 import 'package:my_flutter_application/widgets/home/home_body.dart';
 import 'package:my_flutter_application/widgets/home/add_button.dart';
-
+import 'package:my_flutter_application/database/database_helper.dart';
 import 'package:my_flutter_application/repository/task_repository.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //DatabaseHelper().deleteData();
     TaskRepository().getTask().toString();
     return Scaffold(
       appBar: MyAppBar(),

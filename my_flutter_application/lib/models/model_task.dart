@@ -1,8 +1,8 @@
 class ModelTask {
   final int? id;
   final String title;
-  final int date;
-  final int time;
+  final String date;
+  final String time;
   final int alarm;
 
   ModelTask({

@@ -14,10 +14,10 @@ class CreateTaskButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.only(top: 50.0, left: 30.0, right: 30.0),
+        margin: EdgeInsets.only(top: 50.0, left: 50.0, right: 50.0),
         height: 70.0,
         //dimensión del botón - alto
-        width: 150.0,
+        width: 550.0,
         //dimensón del botón - largo
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),

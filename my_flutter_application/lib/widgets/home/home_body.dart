@@ -67,14 +67,13 @@ class _TasksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //print(this.task[0].title);
     return ListView.builder(
       itemCount: task.length,
         itemBuilder: (BuildContext context, int i){
 
           final specificTask = task[i];
 
-          return Task(specificTask.title, "10:00 AM");
+          return Task(specificTask.title, specificTask.time);
 
         }
     );
