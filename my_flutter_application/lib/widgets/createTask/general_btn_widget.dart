@@ -42,23 +42,6 @@ class ButtonWidget extends StatelessWidget {
             ),
           ],
         ));
-    /*return InkWell(
-      onTap: onTap,
-      child: Container(
-        margin: EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
-        padding: EdgeInsets.all(20.0),
-        decoration: BoxDecoration(
-          color: Color(0xFFF3F2F4),
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.purple),
-            Text(text),
-          ],
-        ),
-      ),
-    );*/
   }
 }
 

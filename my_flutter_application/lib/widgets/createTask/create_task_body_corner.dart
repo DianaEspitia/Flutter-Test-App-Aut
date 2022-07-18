@@ -7,6 +7,7 @@ import 'package:my_flutter_application/screens/home.dart';
 import 'package:my_flutter_application/widgets/createTask/create_task_btn.dart';
 import 'package:my_flutter_application/widgets/createTask/date_picker.dart';
 import 'package:my_flutter_application/widgets/createTask/alarm.dart';
+import 'package:my_flutter_application/widgets/createTask/alarm_dropdown.dart';
 
 class CornerCard extends StatefulWidget {
   const CornerCard({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _CornerCardState extends State<CornerCard> {
   final TextEditingController titleController = TextEditingController();
   TimeOfDay selectedTime = TimeOfDay.now();
   DateTime selectedDate = DateTime.now();
-  final TextEditingController alarmController = TextEditingController();
+  int alarmValue = 5;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class _CornerCardState extends State<CornerCard> {
                       TaskTitle(controller: titleController),
                       DatePicker(selectedDate: selectedDate, setDate: (currentDate) => _setDatePicker(currentDate)),
                       TimePickerWidget(selectedTime: selectedTime, setTime: (timeOfDay) => _setTimePicker(timeOfDay)),
-                      Alarm(),
+                      AlarmDropdown(setAlarm: (int) => _setAlarm(int)),
                       CreateTaskButton(onTap: _onSaveData,
                       ),
                     ],
@@ -67,11 +68,17 @@ class _CornerCardState extends State<CornerCard> {
     }
   }
 
+  _setAlarm(int? value) async {
+    setState(() {
+      alarmValue = value!;
+    });
+  }
+
     void _onSaveData() {
       ModelTask _newTask = ModelTask(
         title: titleController.text,
         date: '${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
-        alarm: 10,
+        alarm: alarmValue,
         time: selectedTime.format(context).toString(),
       );
       DatabaseHelper().insertTask(_newTask);
