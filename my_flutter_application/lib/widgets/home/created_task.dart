@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_application/screens/createTask.dart';
 
-class Task extends StatelessWidget {
+import '../../models/model_task.dart';
+
+class CreatedTask extends StatefulWidget {
+  //const CreatedTask({Key? key}) : super(key: key);
+
   final String task;
   final String time;
+  final ModelTask? myTask;
 
-  Task(this.task, this.time);
+  CreatedTask(this.task, this.time, this.myTask); //constructor posicional        
+
+  @override
+  State<CreatedTask> createState() => _CreatedTaskState();
+}
+
+class _CreatedTaskState extends State<CreatedTask> {
+
+  void _onTap() {
+    print("hola");
+    Navigator.push(context, MaterialPageRoute(builder: (context) => CreateTaskScreen(task: widget.myTask, appBarTitle: "Update",buttonTitle: "Update Task",)));
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +37,7 @@ class Task extends StatelessWidget {
           children: <Widget>[
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [CustomText(text: task), CustomText(text: time)],
+              children: [CustomText(text: widget.task), CustomText(text: widget.time)],
             ),
             arrow
           ],
@@ -28,12 +45,8 @@ class Task extends StatelessWidget {
       ),
     );
   }
-
-  void _onTap() {
-    print("hola");
-    //Navigator.push(context, MaterialPageRoute(builder: (context) => CreateTaskScreen());
-  }
 }
+
 
 class CustomText extends StatelessWidget {
   const CustomText(
@@ -55,3 +68,4 @@ class CustomText extends StatelessWidget {
     );
   }
 }
+

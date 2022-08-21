@@ -41,7 +41,7 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
         Time(controller: timeController),
         Alarm(),
         CreateTaskButton(
-          onTap: _onSaveData,
+          onTap: _onSaveData, buttonTitle: "Create task"
         ),
       ],
     );

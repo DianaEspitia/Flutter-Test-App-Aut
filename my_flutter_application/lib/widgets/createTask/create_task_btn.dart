@@ -3,10 +3,12 @@ import 'package:my_flutter_application/screens/home.dart';
 
 class CreateTaskButton extends StatelessWidget {
   final Function()? onTap;
+  final String buttonTitle;
 
   const CreateTaskButton({
     Key? key,
     required this.onTap,
+    required this.buttonTitle,
   }) : super(key: key);
 
   @override
@@ -29,7 +31,7 @@ class CreateTaskButton extends StatelessWidget {
                 tileMode: TileMode.clamp)),
         child: Center(
           child: Text(
-            "Create Task",
+            buttonTitle,
             style: TextStyle(
               fontSize: 18.0,
               color: Colors.white,

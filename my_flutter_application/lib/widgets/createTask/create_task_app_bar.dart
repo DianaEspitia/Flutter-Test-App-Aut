@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_application/widgets/createTask/alarm.dart';
 
 class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
   static const appHeight = kToolbarHeight * 1.0;
 
+  final String title;
+
   @override
   Size get preferredSize => const Size.fromHeight(appHeight);
 
-  const CTAppBar({Key? key}) : super(key: key);
+  const CTAppBar({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +32,7 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [text1(), text2()],
+              children: [text1(title: title,), text2()],
             )
           ],
         ));
@@ -37,13 +40,15 @@ class CTAppBar extends StatelessWidget implements PreferredSizeWidget {
 }
 
 class text1 extends StatelessWidget {
-  const text1({Key? key}) : super(key: key);
+
+  final String title;
+  const text1({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Text(
-        'Create',
+        title,
         style: TextStyle(
             fontWeight: FontWeight.bold, color: Colors.black, fontSize: 20.0),
       ),

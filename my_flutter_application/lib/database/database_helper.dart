@@ -55,4 +55,27 @@ class DatabaseHelper {
     final db = await database();
     await db.rawDelete('DELETE FROM task');
   }
+
+  Future<dynamic> updateTask(int id) async{
+    final db = await database();
+
+    final task = await db.rawQuery("UPDATE task WHERE id=" + id.toString());
+    return task;
+  }
+
+  Future<dynamic> updateItem(int id, String title, String time, String date, int alarm) async {
+    final db = await database();
+
+    final data = {
+      'title': title,
+      'time': time,
+      'date': date,
+      'alarm': alarm,
+    };
+
+    final result =
+    await db.update('task', data, where: "id = ?", whereArgs: [id]);
+    return result;
+  }
+
 }

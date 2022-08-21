@@ -12,7 +12,7 @@ class _AddButtonState extends State<AddButton> {
   void onPressedAdd() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => CreateTaskScreen()),
+      MaterialPageRoute(builder: (context) => CreateTaskScreen(appBarTitle: "Create", buttonTitle: "Create Task",)),
     );
   }
 

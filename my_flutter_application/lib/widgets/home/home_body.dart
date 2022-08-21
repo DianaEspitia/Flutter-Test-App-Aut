@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_application/models/model_task.dart';
+import 'package:my_flutter_application/widgets/home/created_task.dart';
 import 'title.dart';
 import 'task.dart';
 import 'package:my_flutter_application/repository/task_repository.dart';
 import 'dart:convert';
+import 'package:my_flutter_application/screens/createTask.dart';
 
 class HomeBody extends StatelessWidget {
 
@@ -34,23 +36,6 @@ class HomeBody extends StatelessWidget {
               _TasksList(snapshot.data);
           }
         });
-
-    return ListView(
-        children: <Widget>[
-          HomeTitle(),
-          //llamado del future --> future builder --> se construye a partir de llamado asincronos
-          //Future builder --> listView builder --> tasks
-          //cuando pinte task.title y task.time
-          Task("Wake Up!", "06:00 AM"),
-          //Task(TaskRepository().(), '11:00 AM')
-          //Task(TaskRep, time)
-          /*Task("Daily workout", "06:30 AM"),
-          Task("Briefing with Lokanaka", "07:30 AM"),
-          Task("Pitching with John", "09:00 AM"),
-          Task("Deisgn Landing Page", "11:00 AM"),
-          Task("Design Loka Dashboard", "03:00 PM")*/
-        ]
-    );
   }
 
 }
@@ -73,7 +58,9 @@ class _TasksList extends StatelessWidget {
 
           final specificTask = task[i];
 
-          return Task(specificTask.title, specificTask.time);
+          //return Task(specificTask.title, specificTask.time);
+          return CreatedTask(specificTask.title, specificTask.time, specificTask);
+
 
         }
     );
