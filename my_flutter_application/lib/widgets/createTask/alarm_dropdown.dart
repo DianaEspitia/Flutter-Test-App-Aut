@@ -3,14 +3,15 @@ import 'package:my_flutter_application/widgets/createTask/general_btn_widget.dar
 
 class AlarmDropdown extends StatelessWidget {
   final Function(int?) setAlarm;
-  const AlarmDropdown({Key? key, required this.setAlarm}) : super(key: key);
+  final int alarmValue;
+  const AlarmDropdown({Key? key, required this.setAlarm, required this.alarmValue}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[title(), selectAlarm(setAlarm: setAlarm)],
+          children: <Widget>[title(), selectAlarm(setAlarm: setAlarm, alarmValue: alarmValue,)],
         ));
   }
 }
@@ -39,7 +40,8 @@ class title extends StatelessWidget {
 
 class selectAlarm extends StatefulWidget {
   final Function(int?) setAlarm;
-  const selectAlarm({Key? key, required this.setAlarm}) : super(key: key);
+  final int alarmValue;
+  const selectAlarm({Key? key, required this.setAlarm, required this.alarmValue}) : super(key: key);
 
   @override
   State<selectAlarm> createState() => _selectAlarmState();
@@ -80,7 +82,7 @@ class _selectAlarmState extends State<selectAlarm> {
               isDense: false,
               isExpanded: false,
 
-              value: dropdownvalue,
+              value: widget.alarmValue,
               items: dropdownItems,
               onChanged: (int? value) {
                 widget.setAlarm(value);

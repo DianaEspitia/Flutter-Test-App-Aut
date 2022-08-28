@@ -68,27 +68,17 @@ class _CornerCardState extends State<CornerCard> {
     print(widget.task?.toString());
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Center(
-            child: Container(
-              child: Stack(
-                children: [
-                  Column(
-                    //mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TaskTitle(controller: titleController),
-                      DatePicker(selectedDate: selectedDate, setDate: (currentDate) => _setDatePicker(currentDate)),
-                      TimePickerWidget(selectedTime: selectedTime, setTime: (timeOfDay) => _setTimePicker(timeOfDay)),
-                      AlarmDropdown(setAlarm: (int) => _setAlarm(int)),
-                      CreateTaskButton(onTap: _onSaveData, buttonTitle: widget.buttonTitle),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TaskTitle(controller: titleController),
+            DatePicker(selectedDate: selectedDate, setDate: (currentDate) => _setDatePicker(currentDate)),
+            TimePickerWidget(selectedTime: selectedTime, setTime: (timeOfDay) => _setTimePicker(timeOfDay)),
+            AlarmDropdown(setAlarm: (int) => _setAlarm(int), alarmValue: alarmValue),
+            CreateTaskButton(onTap: _onSaveData, buttonTitle: widget.buttonTitle),
+          ],
+        ),
       ),
     );
   }
