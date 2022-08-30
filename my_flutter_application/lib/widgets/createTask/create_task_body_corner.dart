@@ -1,5 +1,8 @@
+import 'dart:isolate';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:my_flutter_application/widgets/createTask/date.dart';
 import 'package:my_flutter_application/widgets/createTask/time_picker.dart';
 import 'package:my_flutter_application/widgets/createTask/task_title.dart';
 import 'package:my_flutter_application/models/model_task.dart';
@@ -9,6 +12,8 @@ import 'package:my_flutter_application/widgets/createTask/create_task_btn.dart';
 import 'package:my_flutter_application/widgets/createTask/date_picker.dart';
 import 'package:my_flutter_application/widgets/createTask/alarm.dart';
 import 'package:my_flutter_application/widgets/createTask/alarm_dropdown.dart';
+import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
+import 'package:my_flutter_application/widgets/home/home_body.dart';
 
 import '../home/task.dart';
 
@@ -105,7 +110,11 @@ class _CornerCardState extends State<CornerCard> {
     });
   }
 
-    void _onSaveData() {
+    void _onSaveData() async{
+      int alarmId = 1;
+      //await AndroidAlarmManager.initialize();
+      AndroidAlarmManager.periodic(Duration(seconds: 5), alarmId, fireAlarm);
+
       ModelTask _newTask = ModelTask(
         title: titleController.text,
         date: '${selectedDate}',//'${selectedDate.day}/${selectedDate.month}/${selectedDate.year}',
@@ -125,6 +134,13 @@ class _CornerCardState extends State<CornerCard> {
 
       //insert(task);
     }
+
+    void fireAlarm(){
+      //Acá revisar lo de las notificaciones push/local
+      final DateTime now = DateTime.now();
+      final int isolateId = Isolate.current.hashCode;
+      print("[$now] Hello, world! isolate=${isolateId} function='$fireAlarm'");
+  }
   }
 
 

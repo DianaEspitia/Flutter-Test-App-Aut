@@ -6,6 +6,8 @@ import 'task.dart';
 import 'package:my_flutter_application/repository/task_repository.dart';
 import 'dart:convert';
 import 'package:my_flutter_application/screens/createTask.dart';
+import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
+
 
 class HomeBody extends StatelessWidget {
 
@@ -13,6 +15,10 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     //return taskWidget();
     //ListView.Builder
+
+    //AndroidAlarmManager.periodic(Duration(seconds: 5), 1, fireAlarm);
+
+
 
 
     return FutureBuilder(
@@ -43,6 +49,8 @@ class HomeBody extends StatelessWidget {
 Future <List<ModelTask>> _getMyTasks() async{
   return TaskRepository().getTask();
 }
+
+
 
 
 class _TasksList extends StatelessWidget {
