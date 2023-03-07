@@ -4,11 +4,13 @@ import 'package:my_flutter_application/models/model_task.dart';
 import 'package:my_flutter_application/widgets/home/task.dart';
 
 class TaskTitle extends StatelessWidget {
+  final String text;
   final TextEditingController controller;
 
   const TaskTitle({
     Key? key,
     required this.controller,
+    required this.text,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class TaskTitle extends StatelessWidget {
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        const title(),
+        _Title(text: text,),
         input(
           controller: controller,
         ),
@@ -26,16 +28,17 @@ class TaskTitle extends StatelessWidget {
   }
 }
 
-class title extends StatelessWidget {
-  const title({Key? key}) : super(key: key);
+class _Title extends StatelessWidget {
+  final String text;
+  const _Title({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 40.0, left: 20.0),
-      child: const Text(
-        'Task title',
-        style: TextStyle(
+      child: Text(
+        text,
+        style: const TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.bold,
           fontSize: 18.0,

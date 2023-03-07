@@ -77,10 +77,13 @@ class _CornerCardState extends State<CornerCard> {
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TaskTitle(controller: titleController),
+            TaskTitle(text: 'Task title', controller: titleController),
             DatePicker(selectedDate: selectedDate, setDate: (currentDate) => _setDatePicker(currentDate)),
             TimePickerWidget(selectedTime: selectedTime, setTime: (timeOfDay) => _setTimePicker(timeOfDay)),
             AlarmDropdown(setAlarm: (int) => _setAlarm(int), alarmValue: alarmValue),
+            TaskTitle(text: 'Name ', controller: titleController),
+            TaskTitle(text: 'Lastname', controller: titleController),
+            TaskTitle(text: 'Country', controller: titleController),
             CreateTaskButton(onTap: _onSaveData, buttonTitle: widget.buttonTitle),
           ],
         ),

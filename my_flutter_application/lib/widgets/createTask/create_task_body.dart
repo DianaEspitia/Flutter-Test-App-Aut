@@ -33,6 +33,7 @@ class _CreateTaskBodyState extends State<CreateTaskBody> {
     return ListView(
       children: <Widget>[
         TaskTitle(
+          text: 'Task title', 
           controller: titleController,
         ),
         Date(
